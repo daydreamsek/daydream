@@ -28,9 +28,9 @@
         .link-area {
             position: absolute;
             left: 0;
-            top: 500px;
+            top: 480px;
             width: 360px;
-            height: 70px;
+            height: 50px;
             background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
         }
@@ -45,18 +45,16 @@
         <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
     </div>
 
-    <audio id="bgm" autoplay>
+    <audio id="bgm" autoplay muted>
         <source src="ttsMP3.com_VoiceText_2025-4-27_5-50-59.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // 사용자가 클릭하면 오디오 재생 보장 (크롬 정책 대응)
-        window.addEventListener('click', () => {
-            const audio = document.getElementById('bgm');
-            if (audio.paused) {
-                audio.play();
-            }
-        }, { once: true });
+        const audio = document.getElementById('bgm');
+        audio.muted = false; // 바로 음성 나오게
+        audio.play().catch(() => {
+            console.log("Autoplay blocked. Will try after user interaction.");
+        });
     </script>
 </body>
 </html>
