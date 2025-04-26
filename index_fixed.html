@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Link Example</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 스크롤 없애기 */
+            background-color: #f9f9f9;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .image-container img {
+            display: block;
+            max-width: none; /* 원본 사이즈 유지 */
+            height: auto;
+        }
+        .link-area {
+            position: absolute;
+            left: 45%;
+            top: 80%;
+            width: 10%;
+            height: 5%;
+            background-color: rgba(0, 0, 0, 0); /* 투명 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="Image">
+        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
+    </div>
+</body>
+</html>
