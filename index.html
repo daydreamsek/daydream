@@ -32,7 +32,7 @@
             object-fit: contain;
             display: block;
         }
-        /* 모바일 기본 (퍼센트 기반) */
+        /* 모바일 기본 (퍼센트 기준) */
         .link-area {
             position: absolute;
             left: 25%;
@@ -42,16 +42,6 @@
             background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
         }
-        /* 피시용 (768px 이상) (픽셀 기반) */
-        @media screen and (min-width: 768px) {
-            .link-area {
-                left: 90px;
-                top: 480px;
-                width: 180px;
-                height: 50px;
-                background-color: rgba(255, 0, 0, 0);
-            }
-        }
         audio {
             display: none;
         }
@@ -59,8 +49,8 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
-        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
+        <img id="mainImage" src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
+        <a id="linkArea" href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
     </div>
 
     <audio id="bgm" autoplay>
@@ -68,6 +58,28 @@
     </audio>
 
     <script>
+        const img = document.getElementById('mainImage');
+        const linkArea = document.getElementById('linkArea');
+
+        function adjustLinkArea() {
+            if (window.innerWidth >= 768) {
+                const rect = img.getBoundingClientRect();
+                linkArea.style.position = 'absolute';
+                linkArea.style.left = (rect.left + rect.width * (90/360)) + 'px';
+                linkArea.style.top = (rect.top + rect.height * (480/641)) + 'px';
+                linkArea.style.width = (rect.width * (180/360)) + 'px';
+                linkArea.style.height = (rect.height * (50/641)) + 'px';
+            } else {
+                linkArea.style.left = '25%';
+                linkArea.style.top = '75%';
+                linkArea.style.width = '50%';
+                linkArea.style.height = '8%';
+            }
+        }
+
+        window.addEventListener('resize', adjustLinkArea);
+        window.addEventListener('load', adjustLinkArea);
+
         const audio = document.getElementById('bgm');
         audio.muted = false;
         audio.play().catch(() => {
