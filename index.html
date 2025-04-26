@@ -18,26 +18,19 @@
         }
         .image-container {
             position: relative;
-            width: 100vw;
-            height: 100dvh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 90vw;
+            max-width: 360px;
+            aspect-ratio: 360 / 641;
+            background-image: url('https://i.postimg.cc/j5R3DcxQ/image.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
-        .image-container img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        /* 모바일 + 피시 공통 클릭 영역 (퍼센트 기준) */
         .link-area {
             position: absolute;
-            left: 25%;
-            top: 75%;
-            width: 50%;
+            left: 15%;
+            top: 78%;
+            width: 70%;
             height: 8%;
             background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
@@ -49,7 +42,6 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
         <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
     </div>
 
