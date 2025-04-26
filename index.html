@@ -43,16 +43,17 @@
 <body>
     <div class="image-container">
         <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
-        <a href="#" class="link-area" onclick="openNewWindow()"></a>
+        <a href="#" class="link-area" onclick="return openPopup();"></a>
     </div>
 
     <script>
-        function openNewWindow() {
+        function openPopup() {
             window.open(
                 "https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C",
-                "_blank",
+                "popupWindow",
                 "width=800,height=600,resizable=no,scrollbars=yes"
             );
+            return false;
         }
     </script>
 </body>
