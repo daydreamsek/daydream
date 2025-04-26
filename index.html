@@ -10,24 +10,27 @@
             padding: 0;
             width: 100vw;
             height: 100dvh;
-            min-height: 100vh;
             background-color: #000;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
         .image-container {
             position: relative;
-            width: 100%;
-            max-width: 360px;
-            height: auto;
+            width: 100vw;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .image-container img {
-            width: 100%;
+            width: auto;
             height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             display: block;
-            max-height: 100dvh;
         }
         .link-area {
             position: absolute;
