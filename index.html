@@ -7,19 +7,20 @@
         html, body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
             background-color: #000;
-            width: 360px;
-            height: 641px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
         .image-container {
             position: relative;
             width: 360px;
             height: 641px;
-            margin: auto;
-            position: relative;
         }
-        img {
+        .image-container img {
             width: 100%;
             height: 100%;
             display: block;
@@ -41,7 +42,7 @@
 <body>
     <div class="image-container">
         <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
-        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" class="link-area" target="_blank"></a>
+        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
     </div>
 
     <audio id="bgm" autoplay>
@@ -49,6 +50,7 @@
     </audio>
 
     <script>
+        // 사용자가 클릭하면 오디오 재생 보장 (크롬 정책 대응)
         window.addEventListener('click', () => {
             const audio = document.getElementById('bgm');
             if (audio.paused) {
