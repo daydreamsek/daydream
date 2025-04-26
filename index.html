@@ -32,6 +32,7 @@
             object-fit: contain;
             display: block;
         }
+        /* 모바일용 기본 스타일 */
         .link-area {
             position: absolute;
             left: 25%;
@@ -40,6 +41,16 @@
             height: 8%;
             background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
+        }
+        /* 피시용 (화면이 768px 이상이면) */
+        @media screen and (min-width: 768px) {
+            .link-area {
+                left: 90px;
+                top: 480px;
+                width: 180px;
+                height: 50px;
+                background-color: rgba(255, 0, 0, 0);
+            }
         }
         audio {
             display: none;
