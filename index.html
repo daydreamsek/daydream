@@ -3,43 +3,57 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Image Link Example</title>
+    <title>SOLEUM KIM Card</title>
     <style>
         html, body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* 스크롤 없애기 */
-            background-color: #f9f9f9;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+            width: 100vw;
+            height: 100vh;
         }
         .image-container {
             position: relative;
-            display: inline-block;
+            width: 360px;
+            height: 641px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
         }
-        .image-container img {
+        img {
+            width: 100%;
+            height: 100%;
             display: block;
-            max-width: none; /* 원본 사이즈 유지 */
-            height: auto;
         }
         .link-area {
             position: absolute;
-            left: 45%;
-            top: 80%;
-            width: 10%;
-            height: 5%;
-            background-color: rgba(0, 0, 0, 0); /* 투명 */
+            left: 0;
+            top: 500px;
+            width: 360px;
+            height: 70px;
+            background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="Image">
-        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" target="_blank" class="link-area"></a>
+        <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
+        <a href="#" class="link-area" onclick="openNewWindow()"></a>
     </div>
+
+    <script>
+        function openNewWindow() {
+            window.open(
+                "https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C",
+                "_blank",
+                "width=800,height=600,resizable=no,scrollbars=yes"
+            );
+        }
+    </script>
 </body>
 </html>
