@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,19 +9,15 @@
             padding: 0;
             overflow: hidden;
             background-color: #000;
-            width: 100vw;
-            height: 100vh;
+            width: 360px;
+            height: 641px;
         }
         .image-container {
             position: relative;
             width: 360px;
             height: 641px;
             margin: auto;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: absolute;
+            position: relative;
         }
         img {
             width: 100%;
@@ -38,23 +33,28 @@
             background-color: rgba(255, 0, 0, 0);
             cursor: pointer;
         }
+        audio {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="image-container">
         <img src="https://i.postimg.cc/j5R3DcxQ/image.png" alt="SOLEUM KIM">
-        <a href="#" class="link-area" onclick="return openPopup();"></a>
+        <a href="https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C" class="link-area" target="_blank"></a>
     </div>
 
+    <audio id="bgm" autoplay>
+        <source src="ttsMP3.com_VoiceText_2025-4-27_5-50-59.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        function openPopup() {
-            window.open(
-                "https://namu.wiki/w/%EA%B9%80%EC%86%94%EC%9D%8C",
-                "popupWindow",
-                "width=800,height=600,resizable=no,scrollbars=yes"
-            );
-            return false;
-        }
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bgm');
+            if (audio.paused) {
+                audio.play();
+            }
+        }, { once: true });
     </script>
 </body>
 </html>
